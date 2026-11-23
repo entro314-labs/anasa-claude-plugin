@@ -60,10 +60,14 @@ may not go ahead. Pass the reason on in plain words:
 The tools reach only the vault that is open in Anasa, or the one it had open when it was last
 closed. Notes of another vault read as if they did not exist.
 
+Every vault tool needs **Enable MCP server** switched on in Anasa (Settings → AI Features → MCP
+server). It is off until the person turns it on, and while it is off each tool answers "the MCP
+server is switched off in Anasa"; tell the person where the switch is and stop. Versions of
+Anasa up to 1.1.0 did not check the switch for the six tools below.
+
 The six tools that read notes and add tasks work from the vault's database on disk, so they
-answer while Anasa is closed. `get_open_note` and `edit_note` need Anasa running with **Enable
-MCP server** and **Let agents use the open app** switched on (Settings → AI Features → MCP
-server). Both are off until the person turns them on. When they are off or the app is closed,
+answer while Anasa is closed. `get_open_note` and `edit_note` also need Anasa running with **Let
+agents use the open app** switched on in the same place. When it is off or the app is closed,
 the tool says "Anasa is not open, or its live bridge is off"; tell the person where the
 switches are.
 

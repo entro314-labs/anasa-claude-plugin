@@ -17,9 +17,10 @@ see the `anasa` skill; do not answer from memory as if you had looked.
   starting "alpha".
 - Send plain words. There are no operators or quoted phrases: `or`, `and` and `not` count as
   words to match, and punctuation other than hyphens is stripped out.
-- Leave hyphens out: search `well known`, not `well-known`, and `2026 06 30`, not `2026-06-30`.
-  A hyphen inside a query word can make the search fail with a database error. If a search
-  comes back with a "sqlite error", remove the punctuation and search again.
+- A hyphenated word or a date is matched as its parts in that order: `well-known` finds
+  "well-known" and "well known", and `2026-06-30` finds that date. In Anasa 1.1.0 and earlier
+  such a search fails with a "sqlite error"; if you see one, search again with spaces in place
+  of the hyphens.
 - Because every word must match, long queries find little. Use two or three distinctive words,
   and run a second search with other words (a synonym, a person's name, a project name) before
   concluding there is nothing.

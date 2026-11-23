@@ -40,11 +40,12 @@ For the vault tools:
   - **Windows**: not supported by this plugin, because its launcher is a POSIX shell script. In
     Anasa, switch on **Enable MCP server** under **Settings → AI Features → MCP server**; **Add
     Anasa to an AI app** there adds the same server to Claude Code or Claude Desktop directly.
+- **Enable MCP server** switched on in Anasa, under **Settings → AI Features → MCP server**. It
+  is off until you turn it on, and while it is off Anasa refuses every vault tool.
 - A vault open in Anasa, with Anasa unlocked. The six tools that read notes and add tasks keep
   working after you close Anasa, on the vault it last had open.
-- For `get_open_note` and `edit_note`: Anasa running, with **Enable MCP server** and **Let
-  agents use the open app** switched on under **Settings → AI Features → MCP server**. Both are
-  off until you turn them on.
+- For `get_open_note` and `edit_note`: Anasa running, with **Let agents use the open app** also
+  switched on in the same place. It is off until you turn it on.
 
 For the connector: an Anasa account with a license. Listing your inbox and checking your plan
 work with any license; sending a note needs an active [Anasa Cloud](https://anasa.md/pricing)
