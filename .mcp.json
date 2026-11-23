@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "anasa": {
+      "type": "http",
+      "url": "https://anasa.md/api/mcp"
+    },
+    "anasa-vault": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/scripts/anasa-mcp",
+      "args": []
+    }
+  }
+}

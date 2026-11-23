@@ -1,0 +1,12 @@
+{
+  "name": "anasa",
+  "displayName": "Anasa",
+  "version": "1.0.0",
+  "description": "Work with your Anasa vault from a conversation with Claude: search and read your notes, find backlinks and tags, add tasks, revise the note open in Anasa once you approve the edit there, and send a note to your Anasa inbox. The vault tools run on your computer through the server that ships with the Anasa desktop app.",
+  "author": { "name": "Entro314 Labs", "url": "https://anasa.md" },
+  "homepage": "https://anasa.md/integrations/claude",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://anasa.md/privacy",
+  "keywords": ["notes", "markdown", "vault", "knowledge-base", "tasks", "backlinks", "local-first", "mcp"],
+  "network": { "hosts": ["anasa.md"] }
+}

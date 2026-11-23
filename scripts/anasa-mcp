@@ -1,0 +1,32 @@
+#!/bin/sh
+# Starts the MCP server that ships inside the Anasa desktop app.
+#
+# The plugin carries no server of its own: anasa-mcp is installed beside the
+# app's main executable and works on the vault Anasa keeps on this computer.
+# This script only finds that program and hands over stdin/stdout. It
+# downloads nothing, installs nothing and makes no network requests.
+#
+# Where Anasa's installers put it:
+#   macOS  inside the app bundle, in /Applications (also where the Homebrew
+#          cask installs) or in the per-user Applications folder. The bundle
+#          is named anasa.app; Anasa.app is listed as well for volumes that
+#          tell upper case from lower case.
+#   Linux  /usr/bin, from the .deb, .rpm and pacman packages.
+# The Linux AppImage keeps anasa-mcp inside its own image, and Windows cannot
+# run this script, so neither is covered here.
+
+for candidate in \
+  "/Applications/anasa.app/Contents/MacOS/anasa-mcp" \
+  "/Applications/Anasa.app/Contents/MacOS/anasa-mcp" \
+  "$HOME/Applications/anasa.app/Contents/MacOS/anasa-mcp" \
+  "$HOME/Applications/Anasa.app/Contents/MacOS/anasa-mcp" \
+  "/usr/bin/anasa-mcp"; do
+  if [ -x "$candidate" ]; then
+    # The plugin passes no arguments, so anasa-mcp serves Anasa's own data
+    # directory for this user.
+    exec "$candidate" "$@"
+  fi
+done
+
+echo "anasa plugin: anasa-mcp not found. Install the Anasa desktop app from https://anasa.md/download (macOS, or the Linux .deb or .rpm package). The Linux AppImage and Windows are not supported by this plugin." >&2
+exit 1

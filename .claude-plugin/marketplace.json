@@ -1,0 +1,14 @@
+{
+  "name": "anasa",
+  "owner": { "name": "Entro314 Labs", "url": "https://anasa.md" },
+  "metadata": {
+    "description": "The Anasa plugin for Claude."
+  },
+  "plugins": [
+    {
+      "name": "anasa",
+      "source": "./",
+      "description": "Search and read your Anasa vault, add tasks, revise the open note with your approval, and send notes to your Anasa inbox, through the server in the Anasa desktop app and the Anasa connector."
+    }
+  ]
+}
